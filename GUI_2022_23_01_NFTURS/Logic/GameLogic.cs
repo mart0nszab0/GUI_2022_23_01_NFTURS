@@ -37,6 +37,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
             LoadLevel(1);
         }
 
+        
 
         //methodok, függvények
         private void LoadLevel(int levelNumber)
@@ -50,7 +51,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
                 {
                     for (int j = 0; j < LevelMatrix.GetLength(1); j++)
                     {
-                        LevelMatrix[i, j] = ConvertToEnum(lines[i][j]);
+                        LevelMatrix[i - 2, j] = ConvertToEnum(lines[i][j]);
                     }
                 }
             }
@@ -67,6 +68,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
                 case 'h': return GameModel.Hoember;
                 case 'r': return GameModel.Repa;
                 case 'k': return GameModel.Kalap;
+                case 'p': return GameModel.Player;
                 default: throw new InvalidDataException("Hibas karakter a palya fajljaban");
             }
         }
