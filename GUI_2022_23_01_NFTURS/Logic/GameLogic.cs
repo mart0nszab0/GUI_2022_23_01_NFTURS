@@ -49,9 +49,9 @@ namespace GUI_2022_23_01_NFTURS.Logic
                 string[] lines = File.ReadAllLines(levelFiles[levelNumber - 1]);
                 LevelMatrix = new GameModel[int.Parse(lines[0]), int.Parse(lines[1])];
 
-                for (int i = 2; i < LevelMatrix.GetLength(0) + 2; i++)
+                for (int i = 2; i < int.Parse(lines[0]); i++)
                 {
-                    for (int j = 0; j < LevelMatrix.GetLength(1); j++)
+                    for (int j = 0; j < int.Parse(lines[1]); j++)
                     {
                         LevelMatrix[i - 2, j] = ConvertToEnum(lines[i][j]);
                     }
