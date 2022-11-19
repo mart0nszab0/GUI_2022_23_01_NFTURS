@@ -24,7 +24,7 @@ namespace GUI_2022_23_01_NFTURS
         public MainWindow()
         {
             InitializeComponent();
-            IGameModel logic = new GameLogic();
+            GameLogic logic = new GameLogic();
             display.SetupModel(logic);
         }
 
