@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GUI_2022_23_01_NFTURS.Logic
 {
-    public class GameLogic
+    public class GameLogic : IGameModel
     {
         public enum GameModel
         {
@@ -22,12 +22,14 @@ namespace GUI_2022_23_01_NFTURS.Logic
 
         private string[] levelFiles;
         public int NUMBER_OF_LEVELS { get; }
+        private Queue<string> levels;
 
 
         //constructor
         public GameLogic()
         {
-            levelFiles = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "Levels"), "*.lvl");
+            levels = new Queue<string>();
+           var levelFiles = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "Levels"), "*.lvl");
             if (levelFiles.Length % 2 != 0)
             {
                 throw new InvalidDataException("Nem paros szamu fajl van a Levels mappaban, minden szinthez ketto fajlra van szukseg");
