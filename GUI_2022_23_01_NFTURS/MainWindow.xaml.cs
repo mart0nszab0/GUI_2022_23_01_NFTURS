@@ -1,4 +1,5 @@
-﻿using GUI_2022_23_01_NFTURS.Logic;
+﻿using GUI_2022_23_01_NFTURS.Controller;
+using GUI_2022_23_01_NFTURS.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,13 @@ namespace GUI_2022_23_01_NFTURS
     /// </summary>
     public partial class MainWindow : Window
     {
+        GameController controller;
         public MainWindow()
         {
             InitializeComponent();
             GameLogic logic = new GameLogic();
             display.SetupModel(logic);
+            controller = new GameController(logic);
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -37,6 +40,12 @@ namespace GUI_2022_23_01_NFTURS
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             display.Resize(new Size(grid.ActualWidth, grid.ActualHeight));
+            display.InvalidateVisual();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            controller.KeyPressed(e.Key);
             display.InvalidateVisual();
         }
     }
