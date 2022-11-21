@@ -33,12 +33,14 @@ namespace GUI_2022_23_01_NFTURS.Renderer
                 double rectHeight = size.Height / model.LevelMatrix.GetLength(0);
 
                 drawingContext.DrawRectangle(Brushes.Gray,new Pen(Brushes.Black, 0), new Rect(0, 0, size.Width, size.Height));
-                for (int i = 0; i < model.LevelMatrix.GetLength(0) ; i++)
+
+                
+                for (int i = 0; i < model.LevelMatrix.GetLength(1) ; i++)
                 {
-                    for (int j = 0; j < model.LevelMatrix.GetLength(1); j++)
+                    for (int j = 0; j < model.LevelMatrix.GetLength(0); j++)
                     {
                         ImageBrush brush = new ImageBrush();
-                        switch (model.LevelMatrix[i,j])
+                        switch (model.LevelMatrix[j, i])
                         {
                             case GameModel.Bokor:
                                 brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "bush2.png"), UriKind.RelativeOrAbsolute)));
@@ -66,9 +68,11 @@ namespace GUI_2022_23_01_NFTURS.Renderer
                         }
                         drawingContext.DrawRectangle(brush, new Pen(Brushes.Black, 0),
                                     new Rect(i * rectWidth, j * rectHeight, rectWidth, rectHeight));
+                                    //new Rect(j * rectHeight, i * rectWidth, rectHeight, rectWidth));
                     }
                 }
             }
+            ;
         }
     }
 }
