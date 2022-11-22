@@ -32,6 +32,18 @@ namespace GUI_2022_23_01_NFTURS.Controller
                 case Key.Right:
                     control.Move(GameLogic.Directions.Right);
                     break;
+                case Key.W:
+                    control.Move(GameLogic.Directions.Up);
+                    break;
+                case Key.S:
+                    control.Move(GameLogic.Directions.Down);
+                    break;
+                case Key.A:
+                    control.Move(GameLogic.Directions.Left);
+                    break;
+                case Key.D:
+                    control.Move(GameLogic.Directions.Right);
+                    break;
             }
             
         }
