@@ -41,7 +41,6 @@ namespace GUI_2022_23_01_NFTURS.Logic
 
             NUMBER_OF_LEVELS = levelFiles.Length / 2;
             LoadLevel(1);
-            ;
         }
 
         //irányítás 
@@ -134,10 +133,10 @@ namespace GUI_2022_23_01_NFTURS.Logic
         {
             switch (c)
             {
-                case 'f': return GameModel.Ho;
+                case 'h': return GameModel.Ho;
                 case 'a': return GameModel.Ajto;
                 case 'b': return GameModel.Bokor;
-                case 'h': return GameModel.Hoember;
+                case 'e': return GameModel.Hoember;
                 case 'r': return GameModel.Repa;
                 case 'k': return GameModel.Kalap;
                 case 'p': return GameModel.Player;
