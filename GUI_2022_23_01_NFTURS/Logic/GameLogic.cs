@@ -40,10 +40,15 @@ namespace GUI_2022_23_01_NFTURS.Logic
             //}
 
             NUMBER_OF_LEVELS = levelFiles.Length;
+
+            RepaFelveve = false; //ez akkor lesz majd true, ha felvesszük a répát, és akkor tudunk csak kilépni a pályáról, ha true
             LoadLevel(1);
         }
 
-        //irányítás 
+
+
+        //irányítás
+        public bool RepaFelveve { get; private set; }
         public void Move(Directions direction)
         {
             var coords = WhereAmI();
@@ -84,6 +89,12 @@ namespace GUI_2022_23_01_NFTURS.Logic
             {
                 LevelMatrix[i, j] = GameModel.Player;
                 LevelMatrix[old_i, old_j] = GameModel.Ho;
+            }
+            else if (LevelMatrix[i, j] == GameModel.Repa) //felvesszük a répát, ha rálépünk
+            {
+                LevelMatrix[i, j] = GameModel.Player;
+                LevelMatrix[old_i, old_j] = GameModel.Ho;
+                RepaFelveve = true;
             }
             else if (LevelMatrix[i,j] == GameModel.Ajto)
             {
