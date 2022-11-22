@@ -34,12 +34,12 @@ namespace GUI_2022_23_01_NFTURS.Logic
         {
             levels = new Queue<string>();
             levelFiles = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "Levels"), "*.lvl");
-            if (levelFiles.Length % 2 != 0)
-            {
-                throw new InvalidDataException("Nem paros szamu fajl van a Levels mappaban, minden szinthez ketto fajlra van szukseg");
-            }
+            //if (levelFiles.Length % 2 != 0)
+            //{
+            //    throw new InvalidDataException("Nem paros szamu fajl van a Levels mappaban, minden szinthez ketto fajlra van szukseg");
+            //}
 
-            NUMBER_OF_LEVELS = levelFiles.Length / 2;
+            NUMBER_OF_LEVELS = levelFiles.Length;
             LoadLevel(1);
         }
 
