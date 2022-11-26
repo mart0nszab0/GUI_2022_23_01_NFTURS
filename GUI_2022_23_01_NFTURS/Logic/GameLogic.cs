@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace GUI_2022_23_01_NFTURS.Logic
 {
@@ -49,6 +50,8 @@ namespace GUI_2022_23_01_NFTURS.Logic
 
         //irányítás
         public bool RepaFelveve { get; private set; }
+
+        public Action LevelOver { get; set; }
         public void Move(Directions direction)
         {
             var coords = WhereAmI();
@@ -98,6 +101,12 @@ namespace GUI_2022_23_01_NFTURS.Logic
             }
             else if (LevelMatrix[i,j] == GameModel.Ajto)
             {
+                if (RepaFelveve)
+                {
+                    LevelOver?.Invoke();
+                    MessageBox.Show("Vége a játéknak!\nNyertél :)");
+                }
+
                 if (levels.Count > 0)
                 {
                     LoadLevel(1); // ez itt még javításra szorul
