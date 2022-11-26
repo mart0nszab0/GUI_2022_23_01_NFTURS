@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace GUI_2022_23_01_NFTURS.Logic
 {
@@ -34,17 +35,23 @@ namespace GUI_2022_23_01_NFTURS.Logic
         {
             levels = new Queue<string>();
             levelFiles = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "Levels"), "*.lvl");
-            if (levelFiles.Length % 2 != 0)
-            {
-                throw new InvalidDataException("Nem paros szamu fajl van a Levels mappaban, minden szinthez ketto fajlra van szukseg");
-            }
+            //if (levelFiles.Length % 2 != 0)
+            //{
+            //    throw new InvalidDataException("Nem paros szamu fajl van a Levels mappaban, minden szinthez ketto fajlra van szukseg");
+            //}
 
-            NUMBER_OF_LEVELS = levelFiles.Length / 2;
+            NUMBER_OF_LEVELS = levelFiles.Length;
+
+            RepaFelveve = false; //ez akkor lesz majd true, ha felvesszük a répát, és akkor tudunk csak kilépni a pályáról, ha true
             LoadLevel(1);
-            ;
         }
 
-        //irányítás 
+
+
+        //irányítás
+        public bool RepaFelveve { get; private set; }
+
+        public Action LevelOver { get; set; }
         public void Move(Directions direction)
         {
             var coords = WhereAmI();
@@ -86,8 +93,20 @@ namespace GUI_2022_23_01_NFTURS.Logic
                 LevelMatrix[i, j] = GameModel.Player;
                 LevelMatrix[old_i, old_j] = GameModel.Ho;
             }
+            else if (LevelMatrix[i, j] == GameModel.Repa) //felvesszük a répát, ha rálépünk
+            {
+                LevelMatrix[i, j] = GameModel.Player;
+                LevelMatrix[old_i, old_j] = GameModel.Ho;
+                RepaFelveve = true;
+            }
             else if (LevelMatrix[i,j] == GameModel.Ajto)
             {
+                if (RepaFelveve)
+                {
+                    LevelOver?.Invoke();
+                    MessageBox.Show("Vége a játéknak!\nNyertél :)");
+                }
+
                 if (levels.Count > 0)
                 {
                     LoadLevel(1); // ez itt még javításra szorul
@@ -134,10 +153,10 @@ namespace GUI_2022_23_01_NFTURS.Logic
         {
             switch (c)
             {
-                case 'f': return GameModel.Ho;
+                case 'h': return GameModel.Ho;
                 case 'a': return GameModel.Ajto;
                 case 'b': return GameModel.Bokor;
-                case 'h': return GameModel.Hoember;
+                case 'e': return GameModel.Hoember;
                 case 'r': return GameModel.Repa;
                 case 'k': return GameModel.Kalap;
                 case 'p': return GameModel.Player;

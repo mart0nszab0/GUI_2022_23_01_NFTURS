@@ -29,6 +29,12 @@ namespace GUI_2022_23_01_NFTURS
             GameLogic logic = new GameLogic();
             display.SetupModel(logic);
             controller = new GameController(logic);
+            logic.LevelOver = CloseWindow;
+        }
+
+        private void CloseWindow()
+        {
+            this.Close();
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
