@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainMenu" Height="450" Width="800">
     <Grid>
-        <Button Content="Play" Click="Button_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Grid.Row = "0" Content="Play" Click="Button_Click" Margin="10,43,10,314" />
+        <Button Grid.Column="0" Content="Stats" Margin="10,179,10,179" />
+        <Button Grid.Column="0" Content="Exit" Margin="10,321,10,37" Click="Button_Click_1" />
     </Grid>
 </Window>

@@ -31,5 +31,10 @@ namespace GUI_2022_23_01_NFTURS
             gameplay = new MainWindow();
             gameplay.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
