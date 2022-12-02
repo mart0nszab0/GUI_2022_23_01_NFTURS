@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <Button Grid.Column="0" Grid.Row = "0" Content="Play" Click="PlayButton_Click" Margin="10,24,10,333" />
-        <Button Grid.Column="0" Content="Stats" Margin="10,179,10,179" />
+        <Button Grid.Column="0" Content="Stats" Margin="10,179,10,179" Click="StatsButton_Click" />
         <Button Grid.Column="0" Content="Exit" Margin="10,348,10,10" Click="Button_Click_1" />
 
         <StackPanel x:Name="sp" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">

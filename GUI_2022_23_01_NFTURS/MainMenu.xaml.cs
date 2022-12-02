@@ -21,7 +21,7 @@ namespace GUI_2022_23_01_NFTURS
     public partial class MainMenu : Window
     {
         MainWindow gameplay;
-        public int NUMBER_OF_LEVELS 
+        public int NUMBER_OF_LEVELS
         {
             get
             {
@@ -37,30 +37,29 @@ namespace GUI_2022_23_01_NFTURS
 
         private void LevelSelector()
         {
-            if (sp.Children.Count != NUMBER_OF_LEVELS) //we only generate the level selector buttons if they're not generated already
+            sp.Children.Clear(); //if there's any content on the right right, it'll be wiped clean
+
+            //margin details (applies for all level buttons)
+            Thickness margin = new Thickness();
+            margin.Left = 20;
+            margin.Right = 20;
+            margin.Top = 20;
+            margin.Bottom = 10;
+
+            for (int i = 0; i < NUMBER_OF_LEVELS; i++)
             {
-                //margin details (applies for all level buttons)
-                Thickness margin = new Thickness();
-                margin.Left = 20;
-                margin.Right = 20;
-                margin.Top = 20;
-                margin.Bottom = 10;
+                Button button = new Button();
 
-                for (int i = 0; i < NUMBER_OF_LEVELS; i++)
-                {
-                    Button button = new Button();
+                button.HorizontalAlignment = HorizontalAlignment.Center;
+                button.VerticalAlignment = VerticalAlignment.Center;
+                button.Width = 200;
+                button.Height = 35;
+                button.Margin = margin;
+                button.Click += LevelButtonClick;
 
-                    button.HorizontalAlignment = HorizontalAlignment.Center;
-                    button.VerticalAlignment = VerticalAlignment.Center;
-                    button.Width = 200;
-                    button.Height = 35;
-                    button.Margin = margin;
-                    button.Click += LevelButtonClick;
-
-                    button.Content = $"Level {i + 1}";
-                    sp.Children.Add(button);
-                }
-            } 
+                button.Content = $"Level {i + 1}";
+                sp.Children.Add(button);
+            }
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
@@ -81,5 +80,48 @@ namespace GUI_2022_23_01_NFTURS
             this.Close();
         }
 
+        private void StatsButton_Click(object sender, RoutedEventArgs e)
+        {
+            sp.Children.Clear(); //if there's any content on the right right, it'll be wiped clean
+
+            //margin details (applies for all level buttons)
+            Thickness margin = new Thickness();
+            margin.Left = 20;
+            margin.Right = 20;
+            margin.Top = 20;
+            margin.Bottom = 10;
+
+            Thickness borderThickness = new Thickness(1);
+
+
+            for (int i = 0; i < NUMBER_OF_LEVELS; i++)
+            {
+                int levelNumber = i + 1;
+
+                Label label = new Label();
+                label.BorderThickness = borderThickness;
+                label.BorderBrush = Brushes.Black;
+                label.Margin = margin;
+                label.Content = $"Level {levelNumber}";
+
+                if (LevelInfo.LevelCompleted(levelNumber))
+                {
+                    label.Background = Brushes.LightGreen;
+                }
+
+                sp.Children.Add(label);
+            }
+
+            Button button = new Button();
+            button.Content = "Clear";
+            button.Click += ClearButton_Click;
+            sp.Children.Add(button);
+        }
+
+        public void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            LevelInfo.ClearStats();
+            StatsButton_Click(sender, e);
+        }
     }
 }

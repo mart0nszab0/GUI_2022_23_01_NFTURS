@@ -28,7 +28,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
         private string[] levelFiles;
         public int NUMBER_OF_LEVELS { get; }
         private Queue<string> levels;
-
+        private int levelNumber;
 
         //constructor
         public GameLogic(int levelNumber)
@@ -43,6 +43,8 @@ namespace GUI_2022_23_01_NFTURS.Logic
             NUMBER_OF_LEVELS = levelFiles.Length;
 
             RepaFelveve = false; //ez akkor lesz majd true, ha felvesszük a répát, és akkor tudunk csak kilépni a pályáról, ha true
+
+            this.levelNumber = levelNumber;
             LoadLevel(levelNumber);
         }
 
@@ -104,6 +106,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
                 if (RepaFelveve)
                 {
                     LevelOver?.Invoke();
+                    LevelInfo.EditCompletion(levelNumber);
                     MessageBox.Show("Vége a játéknak!\nNyertél :)");
                 }
 
