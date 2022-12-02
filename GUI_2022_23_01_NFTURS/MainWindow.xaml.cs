@@ -23,6 +23,8 @@ namespace GUI_2022_23_01_NFTURS
     public partial class MainWindow : Window
     {
         GameController controller;
+        
+
         public MainWindow()
         {
             InitializeComponent();
