@@ -25,7 +25,7 @@ namespace GUI_2022_23_01_NFTURS
         {
             get
             {
-                return new GameLogic().NUMBER_OF_LEVELS;
+                return new GameLogic(1).NUMBER_OF_LEVELS;
             }
         }
 
@@ -55,7 +55,7 @@ namespace GUI_2022_23_01_NFTURS
                     button.Width = 200;
                     button.Height = 35;
                     button.Margin = margin;
-                    
+                    button.Click += LevelButtonClick;
 
                     button.Content = $"Level {i + 1}";
                     sp.Children.Add(button);
@@ -66,8 +66,14 @@ namespace GUI_2022_23_01_NFTURS
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             LevelSelector();
-            //gameplay = new MainWindow();
-            //gameplay.Show();
+        }
+
+        private void LevelButtonClick(object sender, RoutedEventArgs e)
+        {
+
+            int levelNumber = sp.Children.IndexOf((sender as Button)) + 1;
+            gameplay = new MainWindow(levelNumber);
+            gameplay.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

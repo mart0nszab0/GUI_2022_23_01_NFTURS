@@ -31,7 +31,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
 
 
         //constructor
-        public GameLogic()
+        public GameLogic(int levelNumber)
         {
             levels = new Queue<string>();
             levelFiles = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "Levels"), "*.lvl");
@@ -43,7 +43,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
             NUMBER_OF_LEVELS = levelFiles.Length;
 
             RepaFelveve = false; //ez akkor lesz majd true, ha felvesszük a répát, és akkor tudunk csak kilépni a pályáról, ha true
-            LoadLevel(1);
+            LoadLevel(levelNumber);
         }
 
 
