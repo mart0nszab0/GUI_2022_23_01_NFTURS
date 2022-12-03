@@ -12,7 +12,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
     {
         public enum GameModel
         {
-            Bokor, Repa, Ho, Player, Hoember, Kalap, Ajto
+            Latyak, Repa, Ho, Player, Hoember, Kalap, Ajto, Haz
         }
 
         public enum Directions
@@ -158,11 +158,12 @@ namespace GUI_2022_23_01_NFTURS.Logic
             {
                 case 'h': return GameModel.Ho;
                 case 'a': return GameModel.Ajto;
-                case 'b': return GameModel.Bokor;
+                case 'l': return GameModel.Latyak;
                 case 'e': return GameModel.Hoember;
                 case 'r': return GameModel.Repa;
                 case 'k': return GameModel.Kalap;
                 case 'p': return GameModel.Player;
+                case 'v': return GameModel.Haz;
                 default: throw new InvalidDataException("Hibas karakter a palya fajljaban");
             }
         }
