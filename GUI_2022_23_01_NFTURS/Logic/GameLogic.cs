@@ -29,10 +29,12 @@ namespace GUI_2022_23_01_NFTURS.Logic
         public int NUMBER_OF_LEVELS { get; }
         private Queue<string> levels;
         private int levelNumber;
+        private int health;
 
         //constructor
         public GameLogic(int levelNumber)
         {
+            
             levels = new Queue<string>();
             levelFiles = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "Levels"), "*.lvl");
             //if (levelFiles.Length % 2 != 0)
@@ -44,6 +46,7 @@ namespace GUI_2022_23_01_NFTURS.Logic
 
             RepaFelveve = false; //ez akkor lesz majd true, ha felvesszük a répát, és akkor tudunk csak kilépni a pályáról, ha true
 
+            health = 3;
             this.levelNumber = levelNumber;
             LoadLevel(levelNumber);
         }
@@ -105,14 +108,27 @@ namespace GUI_2022_23_01_NFTURS.Logic
             {
                 if (RepaFelveve)
                 {
+                    MessageBox.Show("Vége a játéknak!\nNyertél :)");
                     LevelOver?.Invoke();
                     LevelInfo.EditCompletion(levelNumber);
-                    MessageBox.Show("Vége a játéknak!\nNyertél :)");
+                    
                 }
 
                 if (levels.Count > 0)
                 {
                     LoadLevel(1); // ez itt még javításra szorul
+                }
+            }
+            else if (LevelMatrix[i, j] == GameModel.Hoember)
+            {
+                if (--health == 0)
+                {
+                    MessageBox.Show("Vége a játéknak!\nVesztettél :(");
+                    LevelOver?.Invoke();
+                }
+                else
+                {
+                    MessageBox.Show($"{health} életed maradt");
                 }
             }
         }
