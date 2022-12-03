@@ -46,13 +46,13 @@ namespace GUI_2022_23_01_NFTURS.Renderer
                                 brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "snow2.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Repa:
-                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "carrot.png"), UriKind.RelativeOrAbsolute)));
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "repa.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Ho:
                                 brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "Snow.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Player:
-                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "thief_single.png"), UriKind.RelativeOrAbsolute)));
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "thief.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Hoember:
                                 brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "snowman.png"), UriKind.RelativeOrAbsolute)));
@@ -61,10 +61,13 @@ namespace GUI_2022_23_01_NFTURS.Renderer
                                 brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "hat.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Ajto:
-                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "Basic_Door_Pixel.png"), UriKind.RelativeOrAbsolute)));
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "door.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Haz:
-                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "treehouse.png"), UriKind.RelativeOrAbsolute)));
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "house.png"), UriKind.RelativeOrAbsolute)));
+                                break;
+                            case GameModel.Fa:
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "christmasTree.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             default:
                                 break;
