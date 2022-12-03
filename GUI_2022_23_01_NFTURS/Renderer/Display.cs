@@ -32,7 +32,7 @@ namespace GUI_2022_23_01_NFTURS.Renderer
                 double rectWidth =size.Width / model.LevelMatrix.GetLength(1);
                 double rectHeight = size.Height / model.LevelMatrix.GetLength(0);
 
-                drawingContext.DrawRectangle(Brushes.Gray,new Pen(Brushes.Black, 0), new Rect(0, 0, size.Width, size.Height));
+                drawingContext.DrawRectangle(Brushes.LightGray,new Pen(Brushes.Black, 0), new Rect(0, 0, size.Width, size.Height));
 
                 
                 for (int i = 0; i < model.LevelMatrix.GetLength(1) ; i++)
@@ -42,17 +42,17 @@ namespace GUI_2022_23_01_NFTURS.Renderer
                         ImageBrush brush = new ImageBrush();
                         switch (model.LevelMatrix[j, i])
                         {
-                            case GameModel.Bokor:
-                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "bush2.png"), UriKind.RelativeOrAbsolute)));
+                            case GameModel.Latyak:
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "snow2.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Repa:
-                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "carrot.png"), UriKind.RelativeOrAbsolute)));
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "repa.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Ho:
                                 brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "Snow.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Player:
-                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "thief_single.png"), UriKind.RelativeOrAbsolute)));
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "thief.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Hoember:
                                 brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "snowman.png"), UriKind.RelativeOrAbsolute)));
@@ -61,7 +61,13 @@ namespace GUI_2022_23_01_NFTURS.Renderer
                                 brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "hat.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             case GameModel.Ajto:
-                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "Basic_Door_Pixel.png"), UriKind.RelativeOrAbsolute)));
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "door.png"), UriKind.RelativeOrAbsolute)));
+                                break;
+                            case GameModel.Haz:
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "house.png"), UriKind.RelativeOrAbsolute)));
+                                break;
+                            case GameModel.Fa:
+                                brush = new ImageBrush(new BitmapImage(new Uri(Path.Combine("textures", "christmasTree.png"), UriKind.RelativeOrAbsolute)));
                                 break;
                             default:
                                 break;
