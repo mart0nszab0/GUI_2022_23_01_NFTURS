@@ -32,6 +32,7 @@ namespace GUI_2022_23_01_NFTURS
             display.SetupModel(logic);
             controller = new GameController(logic);
             logic.LevelOver = CloseWindow;
+            this.WindowState = WindowState.Maximized;
         }
 
         private void CloseWindow()
