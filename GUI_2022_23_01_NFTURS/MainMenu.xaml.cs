@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Drawing;
 
 namespace GUI_2022_23_01_NFTURS
 {
@@ -56,6 +57,7 @@ namespace GUI_2022_23_01_NFTURS
                 button.Height = 35;
                 button.Margin = margin;
                 button.Click += LevelButtonClick;
+                button.Background =Brushes.LightSkyBlue;
 
                 button.Content = $"Level {i + 1}";
                 sp.Children.Add(button);
