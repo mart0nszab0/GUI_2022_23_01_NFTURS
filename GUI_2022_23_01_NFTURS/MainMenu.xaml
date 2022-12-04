@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_2022_23_01_NFTURS"
         mc:Ignorable="d"
-        Title="MainMenu" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="MainMenu" Height="550" Width="900">
     <Grid x:Name="g">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
