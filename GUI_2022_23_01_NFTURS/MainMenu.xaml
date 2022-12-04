@@ -11,10 +11,13 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
+        
+        
+        <Label Content="Rob the snowman" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" FontSize="35" Foreground="DarkSlateBlue" FontStyle="Italic" Margin="0,25,0,0"/>
 
-        <Button Grid.Column="0" Grid.Row = "0" Content="Play" Click="PlayButton_Click" Margin="10,24,10,333" />
-        <Button Grid.Column="0" Content="Stats" Margin="10,179,10,179" Click="StatsButton_Click" />
-        <Button Grid.Column="0" Content="Exit" Margin="10,348,10,10" Click="Button_Click_1" />
+        <Button Grid.Column="0" Grid.Row = "0" Content="Play" Click="PlayButton_Click" Margin="178,144,178,234" Background="Aquamarine" FontSize="20" Padding="10" />
+        <Button Grid.Column="0" Content="Stats" Margin="178,250,178,128" Click="StatsButton_Click" Background="Aquamarine" FontSize="20" />
+        <Button Grid.Column="0" Content="Exit" Margin="178,351,178,27" Click="Button_Click_1" Background="Aquamarine" FontSize="20" />
 
         <StackPanel x:Name="sp" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
             
