@@ -21,11 +21,12 @@ namespace GUI_2022_23_01_NFTURS
     public partial class MainMenu : Window
     {
         MainWindow gameplay;
+        GameLogic logic = new GameLogic(1);
         public int NUMBER_OF_LEVELS
         {
             get
             {
-                return new GameLogic(1).NUMBER_OF_LEVELS;
+                return logic.NUMBER_OF_LEVELS;
             }
         }
 
