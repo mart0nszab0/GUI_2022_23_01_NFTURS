@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace GUI_2022_23_01_NFTURS
 {
@@ -32,7 +33,15 @@ namespace GUI_2022_23_01_NFTURS
             display.SetupModel(logic);
             controller = new GameController(logic);
             logic.LevelOver = CloseWindow;
-            this.WindowState = WindowState.Maximized;
+            logic.RedrawNeeded += Rajzol;
+
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromSeconds(0.3);
+            dt.Tick += (sender, args) =>
+            {
+                logic.SnowmanStep();
+            };
+            dt.Start();
         }
 
         private void CloseWindow()
@@ -55,6 +64,11 @@ namespace GUI_2022_23_01_NFTURS
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             controller.KeyPressed(e.Key);
+            display.InvalidateVisual();
+        }
+
+        private void Rajzol(object? sender, EventArgs e)
+        {
             display.InvalidateVisual();
         }
     }

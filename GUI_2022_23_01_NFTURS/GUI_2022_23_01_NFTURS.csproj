@@ -8,7 +8,85 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="landscape.png" />
+    <None Remove="levelinfo.lvl" />
+    <None Remove="Levels\lvl1.lvl" />
+    <None Remove="Levels\lvl2.lvl" />
+    <None Remove="Levels\lvl3.lvl" />
+    <None Remove="Levels\lvl4.lvl" />
+    <None Remove="Levels\lvl5.lvl" />
+    <None Remove="Levels\lvl6.lvl" />
+    <None Remove="Levels\lvl7.lvl" />
+    <None Remove="textures\christmasTree.png" />
+    <None Remove="textures\door.png" />
+    <None Remove="textures\hat.png" />
+    <None Remove="textures\house.png" />
+    <None Remove="textures\landscape.png" />
+    <None Remove="textures\repa.png" />
+    <None Remove="textures\Snow.png" />
+    <None Remove="textures\snow2.png" />
+    <None Remove="textures\snowman.png" />
+    <None Remove="textures\snoww.png" />
+    <None Remove="textures\thief.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="levelinfo.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\lvl1.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\lvl2.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\lvl3.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\lvl4.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\lvl5.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\lvl6.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\lvl7.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\christmasTree.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\door.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\hat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\house.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\landscape.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\repa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\Snow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\snow2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\snowman.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\snoww.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\thief.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
