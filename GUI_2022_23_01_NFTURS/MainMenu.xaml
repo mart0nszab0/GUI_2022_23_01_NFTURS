@@ -12,16 +12,18 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\eszti\source\repos\GUI_2022_23_01_NFTURS\GUI_2022_23_01_NFTURS\bin\Debug\net5.0-windows\textures\landscape.png"/>
+            <ImageBrush ImageSource="C:\Users\Plókai Dorina\source\repos\GUI_2022_23_01_NFTURS\GUI_2022_23_01_NFTURS\bin\Debug\net5.0-windows\textures\landscape.png"/>
         </Grid.Background>
         
-        <Label Content="Rob the snowman" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" FontSize="40" Foreground="DarkSlateBlue" FontWeight="Heavy" FontStyle="Italic" Margin="0,25,0,0"/>
+        
+        <Label Content="Rob the snowman" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" FontSize="40" Foreground="DarkSlateBlue" FontWeight="Bold" FontStyle="Italic" Margin="0,25,0,0"/>
+       
+          <Button Grid.Column="0" Content="Play" Click="PlayButton_Click"  Background="LightSkyBlue" FontSize="20" Width="100" Height="50" FontWeight="Bold" />
+          <Button Grid.Column="0" Content="Stats"  Click="StatsButton_Click" Background="LightSkyBlue" FontSize="20" Width="100" Height="50"  FontWeight="Bold" Margin="190,273,190,111"/>
+          <Button Grid.Column="0" Content="Exit" Click="Button_Click_1" Background="LightSkyBlue" FontSize="20" Width="100" Height="50" FontWeight="Bold" Margin="190,359,190,25"/>
+        
 
-        <Button Grid.Column="0" Content="Play" Click="PlayButton_Click" Margin="178,147,178,231" Background="Aquamarine" FontSize="20" />
-        <Button Grid.Column="0" Content="Stats" Margin="178,250,178,128" Click="StatsButton_Click" Background="Aquamarine" FontSize="20" />
-        <Button Grid.Column="0" Content="Exit" Margin="178,351,178,27" Click="Button_Click_1" Background="Aquamarine" FontSize="20" />
-
-        <StackPanel x:Name="sp" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel x:Name="sp"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
             
         </StackPanel>
     </Grid>
