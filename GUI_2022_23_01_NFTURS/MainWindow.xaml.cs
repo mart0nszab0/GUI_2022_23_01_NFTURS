@@ -30,6 +30,7 @@ namespace GUI_2022_23_01_NFTURS
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            SourceInitialized += (s, a) => WindowState = WindowState.Maximized;
             GameLogic logic = new GameLogic(levelNumber);
             display.SetupModel(logic);
             controller = new GameController(logic);
