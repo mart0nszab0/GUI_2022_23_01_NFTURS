@@ -29,6 +29,7 @@ namespace GUI_2022_23_01_NFTURS
         public MainWindow(int levelNumber)
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             GameLogic logic = new GameLogic(levelNumber);
             display.SetupModel(logic);
             controller = new GameController(logic);
