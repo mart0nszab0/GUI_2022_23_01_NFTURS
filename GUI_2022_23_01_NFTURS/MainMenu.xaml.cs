@@ -34,6 +34,7 @@ namespace GUI_2022_23_01_NFTURS
         public MainMenu()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             //LevelSelector();
         }
 
